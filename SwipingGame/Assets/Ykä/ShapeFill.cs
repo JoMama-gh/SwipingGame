@@ -1,11 +1,12 @@
 using System;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.Serialization;
+using Random = UnityEngine.Random;
 
 public class ShapeFill : MonoBehaviour {
     [SerializeField] Vector2 sampleBoxSize; // x, z
     [SerializeField] float sampleDistance;
+    [SerializeField] float randomJitter;
     [SerializeField] LayerMask shapeColliderMask;
     [SerializeField] GameObject fillPrefab;
     [SerializeField] int fillCount;
@@ -20,8 +21,8 @@ public class ShapeFill : MonoBehaviour {
                 p0.x -= sampleBoxSize.x / 2;
                 p0.z -= sampleBoxSize.y / 2;
                 var p = p0 + 
-                        i * sampleDistance * Vector3.right +
-                        j * sampleDistance * Vector3.forward;
+                        (i * sampleDistance + Random.Range(-1, 1) * randomJitter) * Vector3.right +
+                        (j * sampleDistance + Random.Range(-1, 1) * randomJitter) * Vector3.forward;
                 var hits = Physics.OverlapSphere(p, 0.1f, shapeColliderMask);
                 if (hits.Length > 0) {
                     points.Add(p);
@@ -30,14 +31,29 @@ public class ShapeFill : MonoBehaviour {
         }
         return points;
     }
+
+    void InstantiateAtRandom(List<Vector3> points, int howMany) {
+        if (points.Count < howMany) {
+            Debug.LogError("yo this aint enough points");
+            return;
+        }
+        while (howMany > 0) {
+            int index = Random.Range(0, points.Count);
+            var point = points[index];
+            Instantiate(fillPrefab, point, Quaternion.identity);
+            points.RemoveAt(index);
+            howMany--;
+        }    
+    }
     
     void Start() {
         var points = FindInsidePoints();
-        // TODO: randomize only given count
-        foreach (var point in points) {
-            Instantiate(fillPrefab, point, Quaternion.identity);
-        }
-        //pMirror = new List<BoxCollider>(GetComponentsInChildren<BoxCollider>());
+        // debug: show all points
+        // foreach (var point in points) {
+        //     Instantiate(fillPrefab, point, Quaternion.identity);
+        // }
+        InstantiateAtRandom(points, fillCount);
+        
     }
 
     void OnDrawGizmos() {

@@ -273,13 +273,13 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 130842275}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0.23895717, z: -0, w: 0.9710302}
   m_LocalPosition: {x: 0.5, y: 0.35, z: 0.5}
-  m_LocalScale: {x: 1.39, y: 1.39, z: 5.737335}
-  m_ConstrainProportionsScale: 1
+  m_LocalScale: {x: 2.658792, y: 0.95, z: 5.737335}
+  m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: -27.65, z: 0}
 --- !u!1 &694501360
 GameObject:
   m_ObjectHideFlags: 0
@@ -661,13 +661,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7e302b2a6268a4cc884e7bdbd271aa16, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ShapeFill
-  sampleBoxSize: {x: 5, y: 5}
-  sampleDistance: 1
+  sampleBoxSize: {x: 6.65, y: 7.22}
+  sampleDistance: 0.7
+  randomJitter: 0.2
   shapeColliderMask:
     serializedVersion: 2
     m_Bits: 64
   fillPrefab: {fileID: 7564542415600595583, guid: a494b9f73ace548b5b0a8bc5a7d48229, type: 3}
-  fillCount: 10
+  fillCount: 20
 --- !u!4 &1549814176
 Transform:
   m_ObjectHideFlags: 0
