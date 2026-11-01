@@ -1687,6 +1687,10 @@ PrefabInstance:
       propertyPath: m_ConstrainProportionsScale
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 5887132126174447068, guid: 06b36dfe881e3bd46b7ea00e059d2a38, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 6143213517727717937, guid: 06b36dfe881e3bd46b7ea00e059d2a38, type: 3}
       propertyPath: m_LocalPosition.x
       value: -0.09
@@ -1706,6 +1710,10 @@ PrefabInstance:
     - target: {fileID: 6776142898852636230, guid: 06b36dfe881e3bd46b7ea00e059d2a38, type: 3}
       propertyPath: m_IsKinematic
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7464204010987848998, guid: 06b36dfe881e3bd46b7ea00e059d2a38, type: 3}
+      propertyPath: m_Layer
+      value: 8
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
