@@ -8,7 +8,7 @@ public class Goblin2 : MonoBehaviour {
 
     void Update() {
         elapsedTime += Time.deltaTime;
-        if (elapsedTime >= 5f)
+        if (elapsedTime >= 50f)
     {
         var p1 = target.position;
     var p0 = transform.position;

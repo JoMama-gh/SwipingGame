@@ -3,13 +3,14 @@ using UnityEngine;
 
 public class ExplosiveInputTrigger : MonoBehaviour {
     public List<GameObject> Ball = new List<GameObject>();
+    public float exploderStrenght;
 
     //Create a GameObject list variable and assign a new GameObject list to it.
     public int starttimer;
     void Explode() {
                 foreach (var ball in Ball) {
                     var rb = ball.GetComponent<Rigidbody>();
-                    rb.AddExplosionForce(60f, transform.position, 15f, 0, ForceMode.Impulse);
+                    rb.AddExplosionForce(exploderStrenght, transform.position, 15f, 0, ForceMode.Impulse);
                 }
             }
    
