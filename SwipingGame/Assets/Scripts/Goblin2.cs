@@ -2,7 +2,7 @@ using UnityEngine;
 
 public class Goblin2 : MonoBehaviour {
     public Transform target;
-    public float speed=3;
+    public float speed=10;
     public bool atDestination = false;
     void Update() {
         var p1 = target.position;
