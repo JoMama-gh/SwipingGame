@@ -125,7 +125,13 @@ public class ShapeFillFunctionality : MonoBehaviour
     // Function to Instantiate Player side balls
     void PlayerInstantiateAtRandom(List<Vector3> points, int ballAmount)
     {
-
+        /*
+        if (points.Count < ballAmount)
+        {
+            Debug.LogError("yo this aint enough points");
+            return;
+        }
+        */
 
         while (ballAmount > 0)
         {
@@ -133,6 +139,30 @@ public class ShapeFillFunctionality : MonoBehaviour
             float randomizeSize = Random.Range(ballSize.x, ballSize.y);
             var point = points[index];
             GameObject ball = Instantiate(ballPrefab, point, Quaternion.identity);
+            ball.transform.localScale = new Vector3(1, 1, 1) * randomizeSize;
+            points.RemoveAt(index);
+            ballAmount--;
+        }
+    }
+
+    // Function to Instantiate Mirror side balls
+    void MirrorInstantiateAtRandom(List<Vector3> points, int ballAmount)
+    {
+        /*
+        if (points.Count < ballAmount)
+        {
+            Debug.LogError("yo this aint enough points");
+            return;
+        }
+        */
+
+        while (ballAmount > 0)
+        {
+            int index = Random.Range(0, points.Count);
+            float randomizeSize = Random.Range(ballSize.x, ballSize.y);
+            var point = points[index];
+            GameObject ball = Instantiate(ballPrefab, point, Quaternion.identity);
+            ball.GetComponent<Rigidbody>().isKinematic = true;
             ball.transform.localScale = new Vector3(1, 1, 1) * randomizeSize;
             points.RemoveAt(index);
             ballAmount--;
@@ -147,6 +177,8 @@ public class ShapeFillFunctionality : MonoBehaviour
         var pPoints = PointOnPlayersSide();
         var mPoints = PointOnMirrorsSide();
         PlayerInstantiateAtRandom(pPoints, ballAmount);
+        MirrorInstantiateAtRandom(mPoints, ballAmount);
+
     }
 
     // Gizmo's function to represent our boxes
