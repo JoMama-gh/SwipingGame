@@ -645,15 +645,17 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ShapeFillFunctionality
   pRaycastBox: {x: 9, y: 5}
+  pRaycastBoxPosition: {x: 0.11, y: 0.45, z: 2.18}
   mRaycastBox: {x: 9, y: 5}
-  ballSize: {x: 0.5, y: 2}
+  mRaycastBoxPosition: {x: 0.22, y: 0.74, z: -2.32}
+  ballSize: {x: 0.5, y: 0.65}
   ballPrefab: {fileID: 3863746264205179558, guid: 0d80e8ac1333a224c80f7bd9b74a34a8, type: 3}
   ballSpace: 0.01
   randomize: 0.2
   collidersMask:
     serializedVersion: 2
     m_Bits: 64
-  ballAmount: 20
+  ballAmount: 10
 --- !u!4 &1891427964
 Transform:
   m_ObjectHideFlags: 0

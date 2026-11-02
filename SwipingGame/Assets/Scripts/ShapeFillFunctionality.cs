@@ -8,11 +8,11 @@ public class ShapeFillFunctionality : MonoBehaviour
     // Player side Raycast box.
     [SerializeField] Vector2 pRaycastBox;
     // Player side Raycast box transform position.
-    private Vector3 pRaycastBoxPosition;
+    [SerializeField] Vector3 pRaycastBoxPosition;
     // Mirror side Raycast box.
     [SerializeField] Vector2 mRaycastBox;
     // Mirror side Raycast box transform position.
-    private Vector3 mRaycastBoxPosition;
+    [SerializeField] Vector3 mRaycastBoxPosition;
     // Ball prefab size X being min and Y being max.
     [SerializeField] Vector2 ballSize;
     // Ball prefab.
@@ -31,7 +31,7 @@ public class ShapeFillFunctionality : MonoBehaviour
     List<Vector3> PointOnPlayersSide()
     {
         // Set player side raycast box transfrom position.
-        pRaycastBoxPosition = new Vector3(transform.position.x, transform.position.y, 2.5f);
+        //pRaycastBoxPosition = new Vector3(transform.position.x, transform.position.y, 2.5f);
 
         // Player raycast boxes float values changed into integers
         // and space between them applied.
@@ -79,7 +79,7 @@ public class ShapeFillFunctionality : MonoBehaviour
     List<Vector3> PointOnMirrorsSide()
     {
         // Set mirror side raycast box transfrom position.
-        mRaycastBoxPosition = new Vector3(transform.position.x, transform.position.y, -2.5f);
+        //mRaycastBoxPosition = new Vector3(transform.position.x, transform.position.y, -2.5f);
 
         // Mirror raycast boxes float values changed into integers
         // and space between them applied.
