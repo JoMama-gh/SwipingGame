@@ -3,7 +3,7 @@ using UnityEngine.InputSystem;
 
 public class BrushSweeper : MonoBehaviour {
     [Header("Sweeping Settings")]
-    public float sweepDistance = 0.5f;
+    public float sweepDistance = 1f;
     public float sweepSpeed = 5f;
     public bool useLocalAxis = true;
 

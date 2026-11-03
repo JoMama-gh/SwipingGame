@@ -163,7 +163,7 @@ public class ShapeFillFunctionality : MonoBehaviour
             var point = points[index];
             GameObject ball = Instantiate(ballPrefab, point, Quaternion.identity);
             ball.GetComponent<Rigidbody>().isKinematic = true;
-            ball.transform.localScale = new Vector3(1, 1, 1) * randomizeSize;
+            ball.transform.localScale *= randomizeSize;
             points.RemoveAt(index);
             ballAmount--;
         }
