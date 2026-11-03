@@ -19,7 +19,7 @@ public class ExplosiveInputTrigger : MonoBehaviour {
         }
         balldebug = rigidbodies;
         foreach (var rb in rigidbodies) {
-            rb.AddExplosionForce(exploderStrenght, transform.position, 35f, 0, ForceMode.Impulse);
+            rb.AddExplosionForce(exploderStrenght, transform.position, 50f, 0, ForceMode.Impulse);
         }
     }
 

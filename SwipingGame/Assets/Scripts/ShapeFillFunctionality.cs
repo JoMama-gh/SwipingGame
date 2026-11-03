@@ -139,7 +139,7 @@ public class ShapeFillFunctionality : MonoBehaviour
             float randomizeSize = Random.Range(ballSize.x, ballSize.y);
             var point = points[index];
             GameObject ball = Instantiate(ballPrefab, point, Quaternion.identity);
-            ball.transform.localScale = new Vector3(1, 1, 1) * randomizeSize;
+            ball.transform.localScale *= randomizeSize;
             points.RemoveAt(index);
             ballAmount--;
         }
